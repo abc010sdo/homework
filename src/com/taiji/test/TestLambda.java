@@ -1,5 +1,6 @@
 package com.taiji.test;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -13,10 +14,10 @@ public class TestLambda {
 
 	public static void main(String[] args) {
 		List<Student> list = createStudent(Student::new);
-		for (int score : scores) {
+		Arrays.stream(scores).forEach(score -> {
 			System.out.println("成绩为" + score + "的学生:");
 			list.stream().filter(s -> s.getScore() == score).forEach(System.out::println);
-		}
+		});
 	}
 
 	public static List<Student> createStudent(StudentFactory funct) {
