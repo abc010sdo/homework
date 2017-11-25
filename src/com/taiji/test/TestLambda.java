@@ -1,16 +1,12 @@
 package com.taiji.test;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import com.taiji.entity.Student;
-import com.taiji.function.RandScore;
-import com.taiji.function.StudentFactory;
+import com.taiji.function.*;
 
 public class TestLambda {
-	private static int[] scores = { 100, 95, 90, 85, 80, 75, 70, 65, 60 };
+	private static int[] scores = {100, 95, 90, 85, 80, 75, 70, 65, 60};
 
 	public static void main(String[] args) {
 		List<Student> list = createStudent(Student::new);
@@ -23,13 +19,12 @@ public class TestLambda {
 	public static List<Student> createStudent(StudentFactory funct) {
 		List<Student> list = new LinkedList<>();
 		for (int i = 0; i < 50; i++) {
-			int score = scores[createScore(Random::nextInt)];
-			list.add(funct.build(i, "student" + (i + 1), score));
+			list.add(funct.build(i, "student" + (i + 1), scores[createRandom(Random::nextInt)]));
 		}
 		return list;
 	}
 
-	public static int createScore(RandScore funct) {
+	public static int createRandom(RandScore funct) {
 		return funct.getRandom(new Random(), scores.length);
 	}
 }
