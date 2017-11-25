@@ -7,7 +7,7 @@ import com.taiji.function.*;
 
 public class TestLambda {
 	// 学生成绩
-	private static int[] scores = {100, 95, 90, 85, 80, 75, 70, 65, 60};
+	private static int[] scores = { 100, 95, 90, 85, 80, 75, 70, 65, 60 };
 
 	public static void main(String[] args) {
 		List<Student> list = createStudent(Student::new);
@@ -25,7 +25,7 @@ public class TestLambda {
 		}
 		return list;
 	}
-	
+
 	// 产生成绩的随机数
 	public static int createRandom(RandScore funct) {
 		return funct.getRandom(new Random(), scores.length);
