@@ -1,9 +1,13 @@
 package com.taiji.test;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
 
 import com.taiji.entity.Student;
-import com.taiji.function.*;
+import com.taiji.function.RandScore;
+import com.taiji.function.StudentFactory;
 
 public class TestLambda {
 	// 学生成绩
@@ -20,9 +24,8 @@ public class TestLambda {
 	// 产生50个学生对象
 	public static List<Student> createStudent(StudentFactory funct) {
 		List<Student> list = new LinkedList<>();
-		for (int i = 0; i < 50; i++) {
+		for (int i = 0; i < 50; i++)
 			list.add(funct.build(i, "student" + (i + 1), scores[createRandom(Random::nextInt)]));
-		}
 		return list;
 	}
 
