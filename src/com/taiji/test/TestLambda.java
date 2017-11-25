@@ -6,6 +6,7 @@ import com.taiji.entity.Student;
 import com.taiji.function.*;
 
 public class TestLambda {
+	// 学生成绩
 	private static int[] scores = {100, 95, 90, 85, 80, 75, 70, 65, 60};
 
 	public static void main(String[] args) {
@@ -16,6 +17,7 @@ public class TestLambda {
 		});
 	}
 
+	// 产生20个学生对象
 	public static List<Student> createStudent(StudentFactory funct) {
 		List<Student> list = new LinkedList<>();
 		for (int i = 0; i < 50; i++) {
@@ -23,7 +25,8 @@ public class TestLambda {
 		}
 		return list;
 	}
-
+	
+	// 产生成绩的随机数
 	public static int createRandom(RandScore funct) {
 		return funct.getRandom(new Random(), scores.length);
 	}
