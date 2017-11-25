@@ -17,7 +17,7 @@ public class TestLambda {
 		});
 	}
 
-	// 产生20个学生对象
+	// 产生50个学生对象
 	public static List<Student> createStudent(StudentFactory funct) {
 		List<Student> list = new LinkedList<>();
 		for (int i = 0; i < 50; i++) {
