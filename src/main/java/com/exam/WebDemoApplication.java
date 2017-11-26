@@ -54,7 +54,7 @@ public class WebDemoApplication {
 			}
 		};
 	}
-
+	
 	public void seek(Scanner sc, int start) throws Exception {
 		System.out.println("\n==========签到情况==========");
 		signService.getSignTable(start, 5).forEach(System.out::println);
@@ -72,7 +72,7 @@ public class WebDemoApplication {
 			System.out.print("请输入学号:");
 			signService.findBySid(sc.nextInt()).forEach(System.out::println);
 			break;
-		case "b":
+		case "b": 
 			System.out.print("请输入学号:");
 			int count = signService.count(sc.nextInt());
 			System.out.println("签到次数:" + count);
