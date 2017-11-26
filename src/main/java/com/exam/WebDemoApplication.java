@@ -52,7 +52,7 @@ public class WebDemoApplication {
 				sc.close();
 			}
 		};
-	}
+	} 
 	
 	public void seek(Scanner sc, int start) throws Exception {
 		System.out.println("\n==========签到情况==========");
