@@ -24,13 +24,14 @@ public class TestLambda {
 	// 产生50个学生对象
 	public static List<Student> createStudent(StudentFactory funct) {
 		List<Student> list = new LinkedList<>();
-		for (int i = 0; i < 50; i++)
-			list.add(funct.build(i, "student" + (i + 1), scores[createRandom(Random::nextInt)]));
+		for (int i = 0; i < 50; i++) {
+			list.add(funct.build(i, "student" + (i + 1), scores[createRandom(new Random()::nextInt)]));
+		}
 		return list;
 	}
 
 	// 产生成绩的随机数
 	public static int createRandom(RandScore funct) {
-		return funct.getRandom(new Random(), scores.length);
+		return funct.getRandom(scores.length);
 	}
 }
