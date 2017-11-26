@@ -80,5 +80,4 @@ public class WebDemoApplication {
 		default : throw new Exception();
 		}
 	}
-	
 }
