@@ -13,7 +13,6 @@ import com.exam.service.StudentService;
 
 @SpringBootApplication
 public class WebDemoApplication {
-	
 	@Autowired
 	private SignService signService;
 	
