@@ -54,7 +54,7 @@ public class WebDemoApplication {
 			}
 		};
 	}
-	 
+	
 	public void seek(Scanner sc, int start) throws Exception {
 		System.out.println("\n==========签到情况==========");
 		signService.getSignTable(start, 5).forEach(System.out::println);
